@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExpenseTracker</title>
+    <style>
+        /* Your styles go here */
+    </style>
+</head>
+<body>
+
+    <h1>Expense Tracker App</h1>
+
+    <h2>Deepesh: {{ user1 }}</h2>
+    <h2>Yogesh: {{ user2 }}</h2>
+    <h2>Last Expense: {{ expense }}</h2>
+
+    <form action="{% url 'expense_form' %}" method="post">
+        {% csrf_token %}
+        <label for="expense">Expense:</label>
+        <input type="number" name="expense" required>
+        <br>
+        <label for="paid_by">Paid By:</label>
+        <input type="text" name="paid_by" required>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+
+</body>
+</html>
